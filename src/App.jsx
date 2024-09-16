@@ -1,56 +1,27 @@
-import Button from "./components/Button";
-import {
-  GoBell,
-  GoCloudDownload,
-  GoDatabase,
-  GoAlert,
-  GoCalendar,
-  GoArchive,
-} from "react-icons/go";
+import Accordion from "./components/Accordion";
 
 export default function App() {
-  const handleClick = () => {
-    console.log("chu chu");
-  };
+  const items = [
+    {
+      label: "can i use react on a project?",
+      content:
+        "you can use react on any of your project you can use react on any of your project you can use react on any of your project you can use react on any of your project",
+    },
+    {
+      label: "can i use javascript on a project?",
+      content:
+        "you can use javascript on any of your project you can use javascript on any of your project you can use javascript on any of your project you can use javascript on any of your project",
+    },
+    {
+      label: "can i use css on a project?",
+      content:
+        "you can use css on any of your project you can use css on any of your project you can use css on any of your project you can use css on any of your project",
+    },
+  ];
 
   return (
     <div>
-      <h1>Buttons with different styles!</h1>
-      <div>
-        <Button primary rounded onClick={handleClick}>
-          <GoBell />
-          primary rounded
-        </Button>
-      </div>
-      <div>
-        <Button success rounded outline>
-          <GoCloudDownload />
-          success rounded outline
-        </Button>
-      </div>
-      <div>
-        <Button danger outline>
-          <GoDatabase />
-          danger outline
-        </Button>
-      </div>
-      <div>
-        <Button warning>
-          <GoAlert /> warning
-        </Button>
-      </div>
-      <div>
-        <Button secondary outline>
-          <GoCalendar />
-          secondary outline
-        </Button>
-      </div>
-      <div>
-        <Button secondary rounded>
-          <GoArchive />
-          secondary rounded
-        </Button>
-      </div>
+      <Accordion items={items} />
     </div>
   );
 }
