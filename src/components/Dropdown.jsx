@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
 import { GoChevronDown } from "react-icons/go";
+import Panel from "./Panel";
 
 export default function Dropdown({ options, onChange, value }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -28,18 +29,14 @@ export default function Dropdown({ options, onChange, value }) {
 
   return (
     <div className="w-48 relative">
-      <div
-        className="flex justify-between items-center cursor-pointer border rounded p-3 shadow bg-white w-full"
+      <Panel
+        className="flex justify-between items-center cursor-pointer"
         onClick={handleClick}
       >
         {value?.label || "Select..."}
         <GoChevronDown className="text-lg" />
-      </div>
-      {isOpen && (
-        <div className="absoulute top-full border rounded p-3 shadow bg-white w-full">
-          {renderedItems}
-        </div>
-      )}
+      </Panel>
+      {isOpen && <Panel className="absoulute top-full">{renderedItems}</Panel>}
     </div>
   );
 }
