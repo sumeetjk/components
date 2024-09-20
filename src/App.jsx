@@ -1,22 +1,24 @@
-import { useState } from "react";
-import Dropdown from "./components/Dropdown";
+import SideBar from "./components/SideBar";
+import Link from "./components/Link";
+import Route from "./components/Route";
+import AccordionPage from "./pages/AccordionPage";
+import DropdownPage from "./pages/DropdownPage";
 
 export default function App() {
-  const [selection, setSelection] = useState(null);
-
-  const handleSelect = (option) => {
-    setSelection(option);
-  };
-
-  const options = [
-    { label: "Red", value: "red" },
-    { label: "Green", value: "green" },
-    { label: "Blue", value: "blue" },
-  ];
-
   return (
     <div>
-      <Dropdown onChange={handleSelect} value={selection} options={options} />
+      <SideBar />
+      <Link to="/dropdown">go to Dropdown</Link>
+      <hr />
+      <Link to="/accordion">go to Accordion!</Link>
+      <div>
+        <Route path="/accordion">
+          <AccordionPage />
+        </Route>
+        <Route path="/dropdown">
+          <DropdownPage />
+        </Route>
+      </div>
     </div>
   );
 }
