@@ -23,11 +23,11 @@ function Button({
       "border-red-700 bg-red-600 text-white": danger,
       "rounded-full": rounded,
       "bg-white": outline,
-      "text-blue-500": outline && primary,
-      "text-gray-500": outline && secondary,
-      "text-green-500": outline && success,
-      "text-yellow-500": outline && warning,
-      "text-red-400": outline && danger,
+      "text-blue-600": outline && primary,
+      "text-gray-600": outline && secondary,
+      "text-green-600": outline && success,
+      "text-yellow-600": outline && warning,
+      "text-red-500": outline && danger,
     }
   );
 

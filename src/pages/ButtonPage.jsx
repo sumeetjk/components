@@ -9,13 +9,10 @@ import {
 } from "react-icons/go";
 
 export default function ButtonPage() {
-  const handleClick = () => {
-    console.log("chu chu");
-  };
+  const handleClick = () => {};
 
   return (
     <div>
-      <h1>Buttons with different styles!</h1>
       <div>
         <Button primary rounded onClick={handleClick}>
           <GoBell />
